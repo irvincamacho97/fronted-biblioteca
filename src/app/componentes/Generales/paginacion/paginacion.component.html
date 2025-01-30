@@ -1,0 +1,14 @@
+<nav class="d-flex justify-content-end align-items-center me-2 mt-1" aria-label="Page navigation example"
+*ngIf="paginacion != undefined">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="paginacion.num_pag==1">
+      <button class="page-link" (click)="cambioPagina(paginacion.num_pag-1)">Anterior</button>
+    </li>
+    <li *ngFor="let page of paginasMostrar" class="page-item" [class.active]="paginacion.num_pag==page"
+      (click)="cambioPagina(page)"><button class="page-link">{{page}}</button></li>
+
+    <li class="page-item" [class.disabled]="paginacion.es_ultima_pag">
+      <button class="page-link" (click)="cambioPagina(paginacion.num_pag+1)">Siguiente</button>
+    </li>
+  </ul>
+</nav>

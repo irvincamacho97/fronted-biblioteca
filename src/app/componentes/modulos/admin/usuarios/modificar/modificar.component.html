@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <p class="my-2 text-center tema text-uppercase">Registro de usuario</p>
+
+    <div class="row mt-5">
+        <form [formGroup]="fgModificarUsuario">
+            <div class="row align-items-center">
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row">
+                        <label for="nombre" class="col-4 col-form-label etiqueta">
+                            Nombre(s):<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgModificarUsuario.controls['nombre'].errors && (fgModificarUsuario.controls['nombre'].dirty || fgModificarUsuario.controls['nombre'].touched)"
+                                placeholder="Ingrese el nombre(s)" formControlName="nombre" maxlength="100">
+                            <div class="invalid-feedback text-center">
+                                <div *ngIf="fgModificarUsuario.controls['nombre'].hasError('required')">
+                                    El campo es obligatorio.
+                                </div>
+                                <div *ngIf="fgModificarUsuario.controls['nombre'].hasError('maxlength')">
+                                    El nombre no puede superar los 100 caracteres.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="primerApellido" class="col-4 col-form-label etiqueta">
+                            Primer apellido:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgModificarUsuario.controls['primerApellido'].errors && (fgModificarUsuario.controls['primerApellido'].dirty || fgModificarUsuario.controls['primerApellido'].touched)"
+                                placeholder="Ingrese el primer apellido" formControlName="primerApellido" maxlength="50">
+                            <div class="invalid-feedback text-center">
+                                <div *ngIf="fgModificarUsuario.controls['primerApellido'].hasError('required')">
+                                    El campo es obligatorio.
+                                </div>
+                                <div *ngIf="fgModificarUsuario.controls['primerApellido'].hasError('maxlength')">
+                                    El primer apellido no puede superar los 50 caracteres.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="segundoApellido" class="col-4 col-form-label etiqueta">
+                            Segundo apellido:
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                placeholder="Ingrese el segundo apellido" formControlName="segundoApellido" maxlength="50"
+                                [class.is-invalid]="fgModificarUsuario.controls['segundoApellido'].errors && (fgModificarUsuario.controls['segundoApellido'].dirty || fgModificarUsuario.controls['segundoApellido'].touched)">
+                            <div class="invalid-feedback text-center" *ngIf="fgModificarUsuario.controls['segundoApellido'].hasError('maxlength')">
+                                El segundo apellido no puede superar los 50 caracteres.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA  -->
+            <div class="row align-items-center">
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="Correo" class="col-4 col-form-label etiqueta">
+                            Correo:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="email" class="form-control border-primary dato"
+                                [class.is-invalid]="fgModificarUsuario.controls['correo'].errors && (fgModificarUsuario.controls['correo'].dirty || fgModificarUsuario.controls['correo'].touched)"
+                                placeholder="Ingrese el correo" formControlName="correo" maxlength="100">
+                            <div class="invalid-feedback text-center">
+                                <p *ngIf="fgModificarUsuario.controls['correo'].hasError('required')">
+                                    El campo es obligatorio.
+                                </p>
+                                <p *ngIf="fgModificarUsuario.controls['correo'].hasError('email')">
+                                    El correo debe tener un formato válido.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="row my-3">
+
+                <div class="d-flex justify-content-end gap-3    ">
+                    <button class="btn btn-link" type="button" routerLink="../../"><i class="bi bi-arrow-left-circle"></i>
+                        Regresar</button>                       
+                    <button class="btn btn-success" type="submit"
+                        [disabled]="fgModificarUsuario.invalid"
+                        (click)="modificaUsuario()">
+                        <i class="bi bi-pencil-square"></i> Actualizar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

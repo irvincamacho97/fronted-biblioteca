@@ -1,0 +1,155 @@
+<div class="container-fluid">
+    <p class="my-2 text-center tema text-uppercase">Registro de usuario</p>
+
+    <div class="row mt-5">
+        <form [formGroup]="fgRegistroUsuario">
+            <div class="row align-items-center">
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row">
+                        <label for="nombre" class="col-4 col-form-label etiqueta">
+                            Nombre(s):<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroUsuario.controls['nombre'].errors && (fgRegistroUsuario.controls['nombre'].dirty || fgRegistroUsuario.controls['nombre'].touched)"
+                                placeholder="Ingrese el nombre(s)" formControlName="nombre" maxlength="100">
+                            <div class="invalid-feedback text-center">
+                                <div *ngIf="fgRegistroUsuario.controls['nombre'].hasError('required')">
+                                    El campo es obligatorio.
+                                </div>
+                                <div *ngIf="fgRegistroUsuario.controls['nombre'].hasError('maxlength')">
+                                    El nombre no puede superar los 100 caracteres.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="primerApellido" class="col-4 col-form-label etiqueta">
+                            Primer apellido:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroUsuario.controls['primerApellido'].errors && (fgRegistroUsuario.controls['primerApellido'].dirty || fgRegistroUsuario.controls['primerApellido'].touched)"
+                                placeholder="Ingrese el primer apellido" formControlName="primerApellido" maxlength="50">
+                            <div class="invalid-feedback text-center">
+                                <div *ngIf="fgRegistroUsuario.controls['primerApellido'].hasError('required')">
+                                    El campo es obligatorio.
+                                </div>
+                                <div *ngIf="fgRegistroUsuario.controls['primerApellido'].hasError('maxlength')">
+                                    El primer apellido no puede superar los 50 caracteres.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="segundoApellido" class="col-4 col-form-label etiqueta">
+                            Segundo apellido:
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                placeholder="Ingrese el segundo apellido" formControlName="segundoApellido" maxlength="50"
+                                [class.is-invalid]="fgRegistroUsuario.controls['segundoApellido'].errors && (fgRegistroUsuario.controls['segundoApellido'].dirty || fgRegistroUsuario.controls['segundoApellido'].touched)">
+                            <div class="invalid-feedback text-center" *ngIf="fgRegistroUsuario.controls['segundoApellido'].hasError('maxlength')">
+                                El segundo apellido no puede superar los 50 caracteres.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA  -->
+            <div class="row align-items-center">
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="contrasenia" class="col-4 col-form-label etiqueta">
+                            Contraseña:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroUsuario.controls['contrasenia'].errors && (fgRegistroUsuario.controls['contrasenia'].dirty || fgRegistroUsuario.controls['contrasenia'].touched)"
+                                placeholder="Ingrese la contraseña" formControlName="contrasenia" maxlength="10">
+                            <div class="invalid-feedback text-center">
+                                <p *ngIf="fgRegistroUsuario.controls['contrasenia'].hasError('required')">
+                                    El campo es obligatorio.
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="Correo" class="col-4 col-form-label etiqueta">
+                            Correo:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="email" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroUsuario.controls['correo'].errors && (fgRegistroUsuario.controls['correo'].dirty || fgRegistroUsuario.controls['correo'].touched)"
+                                placeholder="Ingrese el correo" formControlName="correo" maxlength="100">
+                            <div class="invalid-feedback text-center">
+                                <p *ngIf="fgRegistroUsuario.controls['correo'].hasError('required')">
+                                    El campo es obligatorio.
+                                </p>
+                                <p *ngIf="fgRegistroUsuario.controls['correo'].hasError('email')">
+                                    El correo debe tener un formato válido.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <div class="row align-items-center">
+
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="tipoCuenta" class="col-4 col-form-label etiqueta">
+                            Tipo de rol:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <select class="form-select border-primary dato"
+                                [class.is-invalid]="fgRegistroUsuario.controls['idRol'].value == 0 && (fgRegistroUsuario.controls['idRol'].dirty || fgRegistroUsuario.controls['idRol'].touched)"
+                                formControlName="idRol">
+                                <option value="0" selected>Selecciona tipo de usuario</option>
+                                <option *ngFor="let rol of listaCatRolUsuario" [value]="rol.id">{{rol.item}}</option>
+                            </select>
+                            <div class="invalid-feedback text-center">
+                                El campo es obligatorio.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row my-3">
+
+                <div class="d-flex justify-content-end gap-3    ">
+                    <button class="btn btn-link" type="button" routerLink="../"><i class="bi bi-arrow-left-circle"></i>
+                        Regresar</button>
+                        <button class="btn btn-info text-white" type="submit" (click)="limpiarForm()">
+                            <i class="bi bi-eraser-fill text-white"></i> Limpiar
+                        </button>                        
+                    <button class="btn btn-success" type="submit"
+                        [disabled]="fgRegistroUsuario.invalid || fgRegistroUsuario.controls['idRol'].value == 0 "
+                        (click)="registraUsuario()">
+                        <i class="bi bi-person-plus"></i> Registrar
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+</div>

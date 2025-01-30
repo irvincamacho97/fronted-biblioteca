@@ -1,0 +1,50 @@
+<div class="container-fluid">
+<div class="tema my-2">
+    <span>Administracion de usuario</span>
+</div>
+<div class="row">
+    <div class="col ms-auto text-end">
+        <label class="me-3 etiqueta">Agregar usuario</label>
+        <button class="btn btn-success" type="button" (click)="routRegistroUsuario()">
+            <i class="bi bi-person-plus-fill"></i>
+        </button>
+    </div>
+</div>
+
+<table class="table" >
+    <thead>
+        <tr>
+            <th>
+                Correo
+            </th>
+            <th>
+                nombre
+            </th>
+            <th>
+                Rol
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let usuario of listaUsuario">
+            <td>{{usuario.correo}}</td>
+            <td>{{usuario.nombre}} {{usuario.apellido_paterno}} {{usuario.apellido_materno}}</td>
+            <td>{{usuario.rol_usuario}}</td>
+            <td>
+                <button class="btn btn-success" type="button" *ngIf="usuario.id_rol_usuario !== undefined" (click)="editarUsuario(usuario.id_usuario)">
+                    <i class="bi bi-pencil-square"></i> 
+                </button>
+
+                <button class="btn btn-danger" type="button" *ngIf="usuario.id_rol_usuario !== undefined" (click)="eliminaUsuario(usuario.id_usuario)">
+                    <i class="bi bi-trash3-fill"></i> 
+                </button>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-paginacion [paginacion]="paginacionResponse" (cambioPaginaEvent)="cambioPagina($event)"></app-paginacion>
+</div>
