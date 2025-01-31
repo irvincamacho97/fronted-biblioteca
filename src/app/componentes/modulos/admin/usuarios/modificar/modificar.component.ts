@@ -63,16 +63,6 @@ export class ModificarComponent {
     })
   }
 
-  mapperResponseToForm(){
-    this.fgModificarUsuario.patchValue({
-      "idUsuario":this.usuarioResponse.id_usuario,
-      "nombre": this.usuarioResponse.nombre,
-      "primerApellido": this.usuarioResponse.apellido_paterno,
-      "segundoApellido": this.usuarioResponse.apellido_materno,
-      "correo": this.usuarioResponse.correo,
-    });
-  }
-
   modificaUsuario(){
 
     const confirmacion = confirm('¿Estás seguro de que quieres actualizar este usuario?');
