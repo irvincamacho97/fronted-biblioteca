@@ -6,6 +6,7 @@ import { ModificarComponent } from './componentes/modulos/admin/usuarios/modific
 import { LibrosComponent } from './componentes/modulos/admin/libros/libros/libros.component';
 import { LibroRegistroComponent } from './componentes/modulos/admin/libros/libro-registro/libro-registro.component';
 import { LibroModificarComponent } from './componentes/modulos/admin/libros/libro-modificar/libro-modificar.component';
+import { SolicitudesLibroComponent } from './componentes/modulos/bibliotecario/solicitudes-libro/solicitudes-libro.component';
 
 const routes: Routes = [
   { path: 'admin/usuarios', component: UsuariosComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'admin/libros', component: LibrosComponent },
   { path: 'admin/libros/registro', component: LibroRegistroComponent },
   { path: 'admin/libros/modificar/:idLibro', component: LibroModificarComponent },
+  { path: 'bibliotecario', component: SolicitudesLibroComponent },
 ];
 
 @NgModule({

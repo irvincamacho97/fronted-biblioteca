@@ -12,6 +12,7 @@ import { ModificarComponent } from './componentes/modulos/admin/usuarios/modific
 import { LibrosComponent } from './componentes/modulos/admin/libros/libros/libros.component';
 import { LibroRegistroComponent } from './componentes/modulos/admin/libros/libro-registro/libro-registro.component';
 import { LibroModificarComponent } from './componentes/modulos/admin/libros/libro-modificar/libro-modificar.component';
+import { SolicitudesLibroComponent } from './componentes/modulos/bibliotecario/solicitudes-libro/solicitudes-libro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LibroModificarComponent } from './componentes/modulos/admin/libros/libr
     ModificarComponent,
     LibrosComponent,
     LibroRegistroComponent,
-    LibroModificarComponent
+    LibroModificarComponent,
+    SolicitudesLibroComponent
   ],
   imports: [
     BrowserModule,
