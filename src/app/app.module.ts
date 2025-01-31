@@ -17,6 +17,8 @@ import { ConsultaLibrosComponent } from './componentes/modulos/lector/consulta-l
 import { DetalleLibroComponent } from './componentes/modulos/lector/detalle-libro/detalle-libro.component';
 import { HistorialLibrosComponent } from './componentes/modulos/lector/historial-libros/historial-libros.component';
 import { PerfilLectorComponent } from './componentes/modulos/lector/perfil-lector/perfil-lector.component';
+import { AutenticarComponent } from './componentes/modulos/autenticar/autenticar.component';
+import { MenuComponent } from './componentes/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { PerfilLectorComponent } from './componentes/modulos/lector/perfil-lecto
     ConsultaLibrosComponent,
     DetalleLibroComponent,
     HistorialLibrosComponent,
-    PerfilLectorComponent
+    PerfilLectorComponent,
+    AutenticarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

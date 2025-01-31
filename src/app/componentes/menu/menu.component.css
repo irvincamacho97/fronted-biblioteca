@@ -1,0 +1,36 @@
+/* Color texto*/
+.colortextnav {
+    color: white;
+  }
+  /* Color Menu*/
+  .colormenu {
+    background-color: aquamarine;
+  }
+  /* Color fondo logo*/
+  .fondologo {
+    background-color: white;
+  }
+  /* Color cerrar*/
+  .btn-close1 {
+    float: right;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  /* Tamaño menu */
+  #sidebar {
+    min-height: 100vh;
+    height: 100%;
+  }
+  /* Menu en negritas*/
+  
+  a,
+  h4,
+  button {
+    font-weight: bold;
+  }
+  /* Tamaño logo*/
+  .img-logo {
+    max-height: 60px;
+    margin-right: 10px;
+  }

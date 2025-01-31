@@ -12,4 +12,6 @@ export class UrlServices {
 
     urlConsultaListaPretado ='/api/biblioteca/consulta-lista-prestado';
 
+    urlAutenticar='/api/biblioteca/usuario/autenticar';
+
 }

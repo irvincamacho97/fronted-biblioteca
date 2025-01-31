@@ -1,0 +1,58 @@
+p{
+    font-size: 27px
+  }
+    
+    .input-login {
+      color: black;
+      border: none;
+      border-bottom: 2px solid rgb(124, 119, 119);
+      border-color: var(--principal);
+      border-radius: 0px;
+      max-width: 200 rem ; 
+  }
+  
+  .input-login:focus { 
+      outline: initial;
+  }
+  
+  .form-check-input[type=checkbox] {
+    border: 1px solid black;
+    font-size: 1.3rem;
+  }
+  
+  .input-group-text {
+    border: none; 
+    border-bottom: 2px solid rgb(124, 119, 119); 
+    border-color: var(--principal);
+    background-color: white;
+    border-radius:0%;
+  }
+
+  .mensaje-error {
+    color: red;
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: -5px;
+    font-size: 13px;
+  }
+
+  .background-login {
+   
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .login-container {
+    width: 380px;
+    top: 20%;
+    background-color:aquamarine;
+    box-shadow: 15px 15px 7px 0 #66665abf;
+    padding: 30px;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }

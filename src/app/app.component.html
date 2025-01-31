@@ -1,3 +1,8 @@
 <div class="contenedor-principal">
-    <router-outlet></router-outlet>
+    <div *ngIf="showMenu" class="d-none d-sm-block col-auto col-sm-2 menu">
+        <app-menu></app-menu>
+    </div>
+    <div class="contenido">
+        <router-outlet></router-outlet>
+    </div>
 </div>
