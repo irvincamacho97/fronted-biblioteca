@@ -10,8 +10,10 @@ import { SolicitudesLibroComponent } from './componentes/modulos/bibliotecario/s
 import { ConsultaLibrosComponent } from './componentes/modulos/lector/consulta-libros/consulta-libros.component';
 import { DetalleLibroComponent } from './componentes/modulos/lector/detalle-libro/detalle-libro.component';
 import { HistorialLibrosComponent } from './componentes/modulos/lector/historial-libros/historial-libros.component';
+import { AutenticarComponent } from './componentes/modulos/autenticar/autenticar.component';
 
 const routes: Routes = [
+  { path: '', component: AutenticarComponent },
   { path: 'admin/usuarios', component: UsuariosComponent },
   { path: 'admin/usuarios/registro', component: RegistroComponent },
   { path: 'admin/usuarios/modificar/:idUsuario', component: ModificarComponent },

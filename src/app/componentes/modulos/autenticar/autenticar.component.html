@@ -1,0 +1,87 @@
+<div class="background-login">
+    <div class="container-fluid d-flex align-items-center justify-content-center my-1">
+        <div class="login-container">
+
+            
+            
+            <div class="d-flex justify-content-center detalle-info">
+                <!-- Columna para el título -->
+                <div class="col-md-9 ">
+                    <p class="titulo tema pt-3">Iniciar sesión</p>
+                </div>
+            </div>
+
+            <form [formGroup]="fgAutenticar">
+                <div class="row my-4">
+                    <div class="col-md-12">
+                        <input class="form-control input-login" 
+                             [ngClass]="{'input-error': 
+                            fgAutenticar.controls['correo'].invalid 
+                            && (fgAutenticar.controls['correo'].dirty 
+                            || fgAutenticar.controls['correo'].touched)}"
+                            formControlName="correo"
+                            placeholder="Correo electrónico">
+                    </div>
+                </div>
+    
+                <!-- Bloque de error para correo -->
+         
+                <div *ngIf="fgAutenticar.get('correo')?.hasError('required') && (fgAutenticar.get('correo')?.dirty || fgAutenticar.get('correo')?.touched)" class="col-12">
+                    <div class="mensaje-error">
+                        El correo es obligatorio
+                    </div>
+                </div>
+                
+                <div *ngIf="fgAutenticar.get('correo')?.hasError('email') && (fgAutenticar.get('correo')?.dirty || fgAutenticar.get('correo')?.touched)" class="col-12">
+                    <div class="mensaje-error">
+                        No cumple con el formato<br>de correo electrónico
+                    </div>
+                </div>
+    
+    
+                    <div class="row my-4">
+                    
+                        <div class="col-md-12">
+                            <div class="input-group"> 
+                                <input class="form-control input-login" 
+                                    [ngClass]="{'input-error':
+                                    fgAutenticar.controls['contrasenia'].invalid 
+                                    && (fgAutenticar.controls['contrasenia'].dirty 
+                                    || fgAutenticar.controls['contrasenia'].touched)}" 
+                                    [type]="mostrarContra ? 'text' : 'password'" 
+                                    formControlName="contrasenia" 
+                                    placeholder="Contraseña" />
+                    
+                                <div class="input-group-append">
+                                    <span class="input-group-text" (click)="cambioTipocontrasenia()">
+                                        <i class="bi {{ mostrarContra ? 'bi-eye-fill' : 'bi-eye-slash-fill' }}"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                <!-- Bloque de error para contrasenia -->
+                <div *ngIf="fgAutenticar.controls['contrasenia'].invalid
+                            && (fgAutenticar.controls['contrasenia'].dirty 
+                            || fgAutenticar.controls['contrasenia'].touched)">
+    
+                    <div *ngIf="fgAutenticar.controls['contrasenia'].errors" 
+                            class="mensaje-error ">
+                            La contraseña es obligatoria
+                    </div>
+                </div>
+               
+
+                <div class="mt-4 d-flex justify-content-center">
+                    <button class="btn btn-success" 
+                    [disabled]="!fgAutenticar.valid"
+                    (click)="autenticar()"
+                    >
+                        Iniciar sesión
+                    </button>
+                </div>       
+            </form>
+        </div>
+    </div>
+    </div>

@@ -6,6 +6,8 @@ import { UsuarioPaginacionResponse, UsuarioResponse } from "../modelos/response/
 import { Injectable } from "@angular/core";
 import { UsuarioRegistroRequest } from "../modelos/request/usuario-registro-request";
 import { UsuarioModificarRequest } from "../modelos/request/usuario-modificar-request";
+import { AutenticarRequest } from "../modelos/request/autenticar-request";
+import { AutenticarResponse } from "../modelos/response/autenticar-response";
 
 @Injectable({
     providedIn: 'root'
@@ -38,5 +40,9 @@ export class UsuarioService{
 
     modificar(request:UsuarioModificarRequest):Observable<BaseResponse<String>>{
         return this.httpService.callPut(this.urlServices.urlUsuario,request);
+    }
+
+    autenticar(request:AutenticarRequest):Observable<BaseResponse<AutenticarResponse>>{
+        return this.httpService.callPost(this.urlServices.urlAutenticar,request)
     }
 }
