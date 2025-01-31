@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="tema my-2">
+        <span>Administracion de libros</span>
+    </div>
+    <div class="row">
+        <div class="col ms-auto text-end">
+            <label class="me-3 etiqueta">Agregar libro</label>
+            <button class="btn btn-success" type="button" (click)="routRegistroLibro()">
+                <i class="bi bi-person-plus-fill"></i>
+            </button>
+        </div>
+    </div>
+    
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>
+                    Titulo
+                </th>
+                <th>
+                    Autor
+                </th>
+                <th>
+                    año
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let libro of listaLibro">
+                <td>{{libro.titulo_libro}}</td>
+                <td>{{libro.autor_libro}} </td>
+                <td>{{libro.anio_libro}}</td>
+                <td>
+                    <button class="btn btn-success" type="button" *ngIf="libro.id_libro !== undefined" (click)="editarUsuario(libro.id_libro)">
+                        <i class="bi bi-pencil-square"></i> 
+                    </button>
+    
+                    <button class="btn btn-danger" type="button" *ngIf="libro.id_libro !== undefined" (click)="eliminaUsuario(libro.id_libro)">
+                        <i class="bi bi-trash3-fill"></i> 
+                    </button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <app-paginacion [paginacion]="paginacionResponse" (cambioPaginaEvent)="cambioPagina($event)"></app-paginacion>
+    </div>

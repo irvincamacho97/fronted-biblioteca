@@ -9,6 +9,9 @@ import { PaginacionComponent } from './componentes/Generales/paginacion/paginaci
 import { RegistroComponent } from './componentes/modulos/admin/usuarios/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModificarComponent } from './componentes/modulos/admin/usuarios/modificar/modificar.component';
+import { LibrosComponent } from './componentes/modulos/admin/libros/libros/libros.component';
+import { LibroRegistroComponent } from './componentes/modulos/admin/libros/libro-registro/libro-registro.component';
+import { LibroModificarComponent } from './componentes/modulos/admin/libros/libro-modificar/libro-modificar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ModificarComponent } from './componentes/modulos/admin/usuarios/modific
     UsuariosComponent,
     PaginacionComponent,
     RegistroComponent,
-    ModificarComponent
+    ModificarComponent,
+    LibrosComponent,
+    LibroRegistroComponent,
+    LibroModificarComponent
   ],
   imports: [
     BrowserModule,

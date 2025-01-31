@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <p class="my-2 text-center tema text-uppercase">Registro de libro</p>
+
+    <div class="row mt-5">
+        <form [formGroup]="fgRegistroLibro">
+            <div class="row align-items-center">
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row">
+                        <label for="titulo_libro" class="col-4 col-form-label etiqueta">
+                            Título:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroLibro.controls['titulo_libro'].errors && (fgRegistroLibro.controls['titulo_libro'].dirty || fgRegistroLibro.controls['titulo_libro'].touched)"
+                                placeholder="Ingrese el título" formControlName="titulo_libro" maxlength="100">
+                            <div class="invalid-feedback text-center">
+                                <div *ngIf="fgRegistroLibro.controls['titulo_libro'].hasError('required')">
+                                    El campo es obligatorio.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="autor_libro" class="col-4 col-form-label etiqueta">
+                            Autor libro:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroLibro.controls['autor_libro'].errors && (fgRegistroLibro.controls['autor_libro'].dirty || fgRegistroLibro.controls['autor_libro'].touched)"
+                                placeholder="Ingrese el autor " formControlName="autor_libro" maxlength="50">
+                            <div class="invalid-feedback text-center">
+                                <div *ngIf="fgRegistroLibro.controls['autor_libro'].hasError('required')">
+                                    El campo es obligatorio.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="genero_libro" class="col-4 col-form-label etiqueta">
+                            Genero libro:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                placeholder="Ingrese el genero" formControlName="genero_libro"
+                                [class.is-invalid]="fgRegistroLibro.controls['genero_libro'].errors && (fgRegistroLibro.controls['genero_libro'].dirty || fgRegistroLibro.controls['genero_libro'].touched)">
+                                <div class="invalid-feedback text-center">
+                                    <p *ngIf="fgRegistroLibro.controls['genero_libro'].hasError('required')">
+                                        El campo es obligatorio.
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SEGUNDA COLUMNA  -->
+            <div class="row align-items-center">
+                <div class="form-group mb-3 col-12 col-md-4 align-items-center">
+                    <div class="row align-items-center">
+                        <label for="contrasenia" class="col-4 col-form-label etiqueta">
+                            Año libro:<span class="obligatorio">*</span>
+                        </label>
+                        <div class="col">
+                            <input type="text" class="form-control border-primary dato"
+                                [class.is-invalid]="fgRegistroLibro.controls['anio_libro'].errors && (fgRegistroLibro.controls['anio_libro'].dirty || fgRegistroLibro.controls['anio_libro'].touched)"
+                                placeholder="Ingrese el año" formControlName="anio_libro" maxlength="10">
+                            <div class="invalid-feedback text-center">
+                                <p *ngIf="fgRegistroLibro.controls['anio_libro'].hasError('required')">
+                                    El campo es obligatorio.
+                                </p>
+
+                                <p *ngIf="fgRegistroLibro.controls['anio_libro'].hasError('pattern')">
+                                    El año debe ser un número de 4 dígitos.
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="row my-3">
+
+                <div class="d-flex justify-content-end gap-3    ">
+                    <button class="btn btn-link" type="button" routerLink="../"><i class="bi bi-arrow-left-circle"></i>
+                        Regresar</button>
+                        <button class="btn btn-info text-white" type="submit" (click)="limpiarForm()">
+                            <i class="bi bi-eraser-fill text-white"></i> Limpiar
+                        </button>                        
+                    <button class="btn btn-success" type="submit"
+                        [disabled]="fgRegistroLibro.invalid"
+                        (click)="registraLibro()">
+                        <i class="bi bi-person-plus"></i> Registrar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
