@@ -10,4 +10,6 @@ export class UrlServices {
 
     urlActualizaEstatusLibro='/api/biblioteca/consulta-estatus';
 
+    urlConsultaListaPretado ='/api/biblioteca/consulta-lista-prestado';
+
 }

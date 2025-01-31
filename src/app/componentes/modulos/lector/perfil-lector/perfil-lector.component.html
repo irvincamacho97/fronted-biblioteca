@@ -1,0 +1,18 @@
+<div class="modal-overlay" *ngIf="usuarioResponse">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Perfil Usuario</h5>
+        <button type="button" class="close" (click)="close()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nombre:</strong> {{ usuarioResponse?.nombre }}</p>
+        <p><strong>Apellido paterno:</strong> {{ usuarioResponse?.apellido_paterno }}</p>
+        <p><strong>Apellido Materno:</strong> {{ usuarioResponse?.apellido_materno }}</p>
+        <p><strong>Correo:</strong> {{ usuarioResponse?.correo }}</p>
+        <p><strong>Apellido Materno:</strong> {{ usuarioResponse?.apellido_materno }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">Cerrar</button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<div class="modal-overlay" *ngIf="libro">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{ libro?.titulo_libro }}</h5>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Autor:</strong> {{ libro?.autor_libro }}</p>
+      <p><strong>Año:</strong> {{ libro?.anio_libro }}</p>
+      <p><strong>Género:</strong> {{ libro?.genero_libro }}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="close()">Cerrar</button>
+    </div>
+  </div>
+</div>

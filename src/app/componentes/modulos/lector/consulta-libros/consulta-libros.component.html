@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="tema my-2">
+        <span>Lista de libros</span>
+    </div>
+    <div class="row">
+        <div class="col ms-auto text-end">
+            <label class="me-3 etiqueta">Historial de libros prestados</label>
+            <button class="btn btn-success" type="button" (click)="routHistorialPrestados()">
+                <i class="bi bi-clock-history"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col ms-auto text-end">
+
+            <label class="me-3 etiqueta">Perfil</label>
+            <button class="btn btn-success" type="button" (click)="verDatosPerfil()">
+                <i class="bi bi-person-circle"></i>
+            </button>
+
+        </div>
+    </div>
+    
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>
+                    Titulo
+                </th>
+                <th>
+                    Autor
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let libro of listaLibro">
+                <td>{{libro.titulo_libro}}</td>
+                <td>{{libro.autor_libro}} </td>
+                <td>
+                    <button class="btn btn-success" type="button" *ngIf="libro.id_libro !== undefined" (click)="solicitaLibro(libro.id_libro)">
+                        <i class="bi bi-plus-circle-fill"></i> 
+                    </button>
+    
+                    <button class="btn btn-success" type="button" *ngIf="libro.id_libro !== undefined" (click)="verDetalleLibro(libro.id_libro)">
+                        <i class="bi bi-eye-fill"></i> 
+                    </button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <app-paginacion [paginacion]="paginacionResponse" (cambioPaginaEvent)="cambioPagina($event)"></app-paginacion>
+    </div>
+
+    <app-detalle-libro
+    *ngIf="mostrarModal"
+    [libro]="libroResponse"
+    (closeModal)="cerrarModal()">
+  </app-detalle-libro>
+
+  <app-perfil-lector
+  *ngIf="mostrarModalPerfil"
+  [usuarioResponse]="usuarioResponse"
+  (closeModal)="cerrarModal()">
+</app-perfil-lector>
