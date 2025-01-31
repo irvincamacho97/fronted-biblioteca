@@ -6,4 +6,8 @@ export class UrlServices {
 
     urlLibro='/api/biblioteca/libro';
 
+    urlConsultaEstatusLibro='/api/biblioteca/consulta-libro';
+
+    urlActualizaEstatusLibro='/api/biblioteca/consulta-estatus';
+
 }
